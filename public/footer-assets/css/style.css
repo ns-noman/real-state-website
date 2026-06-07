@@ -1,0 +1,138 @@
+.site-main-footer {
+  background: #2A2F35;
+  padding: 0 0 2em 0;
+}
+
+
+
+.site-main-footer .footer-heading {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.site-main-footer p {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.site-main-footer a {
+  color: #1089ff;
+}
+
+.site-main-footer .con.con-1 {
+  background: #1e1e1e;
+}
+
+.site-main-footer .con.con-2 {
+  background: #1c1c1c;
+}
+
+.site-main-footer .con.con-3 {
+  background: #252525;
+}
+
+
+.site-main-footer .con-info .icon {
+  width: 50px;
+  height: 50px;
+  background: #1089ff;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.site-main-footer .con-info .icon span {
+  color: #fff;
+  font-size: 24px;
+}
+
+.site-main-footer .con-info span {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.site-main-footer .subscribe-form .form-group {
+  position: relative;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+.site-main-footer .subscribe-form .form-group input {
+  background: white !important;
+  border: none !important;
+  outline: none !important;
+  color: rgba(0, 0, 0, 0.3) !important;
+  font-size: 16px;
+  border-radius: 0;
+}
+
+.site-main-footer .subscribe-form .form-group input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.site-main-footer .subscribe-form .form-group input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.site-main-footer .subscribe-form .form-group input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.site-main-footer .subscribe-form .form-group input:-moz-placeholder {
+  /* Firefox 18- */
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.site-main-footer .subscribe-form .form-group input:focus {
+  outline: none !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.site-main-footer .subscribe-form .form-group .submit {
+  color: #fff !important;
+  display: block;
+  width: 130px;
+  height: 52px;
+  font-size: 16px;
+  background: #1089ff !important;
+  border: none;
+  border-radius: 0;
+}
+
+.site-main-footer .subscribe-form .form-group .submit:hover,
+.site-main-footer .subscribe-form .form-group .submit:focus {
+  text-decoration: none !important;
+  outline: none !important;
+}
+
+.site-main-footer .subscribe-form .subheading {
+  display: inline-block;
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 13px;
+}
+
+.site-main-footer .ftco-footer-social li a {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.footer-heading {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.site-main-footer .list-unstyled li a {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.site-main-footer .list-unstyled li a:hover {
+  color: #fff;
+}
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}

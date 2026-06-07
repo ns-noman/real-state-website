@@ -1,0 +1,4 @@
+[06-Nov-2023 19:48:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/bestgyib/dcfstudioltd.com/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/bestgyib/dcfstudioltd.com/config/cache.php on line 18
