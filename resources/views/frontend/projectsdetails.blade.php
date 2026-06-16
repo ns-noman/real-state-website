@@ -22,14 +22,14 @@
             </div>
         </div>
         <div class="bannerImageWrapper">
-            <img src="{{ asset('public/upload/'.$image[0]->image) }}" alt="">
+            <img src="{{ asset('public/upload/projects/'.$project->background_img) }}" alt="">
         </div>
 
     </div>
     <section id="at-a-glance" class=" our-background">
         <div class="clearfix">
             <div class="col-sm-6 no-pad parallax-holder col-sm-46-percent"
-                style="background-image: url('{{ asset('public/upload/'.$image[3]->image) }}'); overflow: hidden;">
+                style="background-image: url('{{ asset('public/upload/projects/'.$project->ataglance_img) }}'); overflow: hidden;">
             </div>
             <div class="col-sm-6 no-pad col-sm-push-6 col-sm-54-percent col-sm-push-46-percent">
                 <div class="content-holder no-before-after bg-white section-gap">
@@ -38,9 +38,7 @@
                     </h2>
                     <div class="feature-details-box-wrapper mb-50">
                         <div class="feature-details mt-20">
-                           @php
-                               echo $project->details;
-                           @endphp
+                           {!! $project->details !!}
                         </div>
                         <a href="#" class="button button-outline button-outline-blackish mt-30 explore-btn">
                             Expand
@@ -61,7 +59,7 @@
                 <div class="col-sm-6 col-md-5 col-md-push-7">
                     <div class="image-box-holder">
                         <div class="image-box no-shadow "
-                            style="background-image: url('{{ asset('public/upload/'.$image[1]->image) }}');">
+                            style="background-image: url('{{ asset('public/upload/projects/'.$project->features_img) }}');">
                             <div class="inner-content text-white">
                                 <p class="text-bold hide">
                                 </p>
@@ -95,20 +93,20 @@
         <div class="gallery-wrapper light-gallery">
             <div class="overflow-hidden">
                 @foreach ($image as $img)
-                <div class="col-xs-6 col-sm-3 col-md-3">
-                    <div class="row">
-                        <a href="{{ asset('public/upload/'.$img->image) }}"
-                            data-sub-html="<h4>{{ $project->name }}</h4>">
-                            <div class="gallery-image-container high-contrast">
-                                <div class="image-thumb">
-                                    <img src="{{ asset('public/upload/'.$img->image) }}" alt="">
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        <div class="row">
+                            <a href="{{ asset('public/upload/projects/'.$img->image) }}"
+                                data-sub-html="<h4>{{ $project->name }}</h4>">
+                                <div class="gallery-image-container high-contrast">
+                                    <div class="image-thumb">
+                                        <img src="{{ asset('public/upload/projects/'.$img->image) }}" alt="">
+                                    </div>
+                                    <div class="gallery-image-hover">
+                                    </div>
                                 </div>
-                                <div class="gallery-image-hover">
-                                </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
@@ -136,7 +134,7 @@
                 <div class="col-sm-6 col-md-6">
                     <div class="image-box-holder">
                         <div class="image-box "
-                            style="background-image: url('{{ asset('public/upload/'.$image[0]->image) }}');">
+                            style="background-image: url('{{ asset('public/upload/projects/'.$project->background_img) }}');">
                         </div>
                     </div>
                 </div>

@@ -20,6 +20,11 @@ class Project extends Model
         'typeID',
         'typeName',
         'categoryID',
-        'categoryName'
+        'categoryName',
+        'thumbnail_img',
+        'background_img',
+        'ataglance_img',
+        'features_img',
+        'booknow_img',
     ];
 }

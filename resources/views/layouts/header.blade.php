@@ -19,8 +19,7 @@
                                         </a>
                                     </div>
                                     <a href="#menu" class="btn btn-dark btn-lg mobile-menu-bar">
-                                        <img src="{{ asset('public/themes') }}/real_estate/assets/img/icons/menu.svg"
-                                            alt="hamburger icon">
+                                        <i class="fa fa-bars"></i>
                                     </a>
                                     <nav class="navbar-right" style="color: #231F20!important;">
                                         <ul class="menu" style="color: #231F20!important;">

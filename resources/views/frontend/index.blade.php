@@ -9,7 +9,7 @@
         @foreach ($sliders as $silder)
             <div data-color="#837B10" class="ls-slide banner-slider-item slider_topper"
                 data-ls="slidedelay:5500;transition2d:12;">
-                <img src="{{ url('public/upload/'.$silder->image) }}"
+                <img src="{{ asset('public/upload/'.$silder->image) }}"
                     class="ls-bg" alt="Shantaholdings Slide">
             </div>
         @endforeach
@@ -54,7 +54,7 @@
                                 <div class="inner">
                                     <a href="{{ url('projectDetails/'.$project->id) }}">
                                         <div class="image-thumb high-contrast">
-                                            <img src="{{ asset('public/upload/'.$project->image) }}"
+                                            <img src="{{ asset('public/upload/projects/'.$project->thumbnail_img) }}"
                                                 alt="{{ $project->name }}" title="{{ $project->name }}">
                                         </div>
                                         <h3 class="title">{{ $project->categoryName }}</h3>

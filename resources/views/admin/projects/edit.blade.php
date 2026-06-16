@@ -64,6 +64,14 @@
 
                             <div class="row">
 
+                                <!-- PROJECT INFORMATION SECTION -->
+                                <div class="col-12 mb-2">
+                                    <h5 class="text-primary">
+                                        <i class="fas fa-info-circle mr-2"></i> Project Information
+                                    </h5>
+                                    <hr>
+                                </div>
+
                                 <!-- Project Name -->
                                 <div class="form-group col-md-6">
                                     <label for="projectname">
@@ -198,19 +206,217 @@
                                     @enderror
                                 </div>
 
-                                <!-- Existing Images -->
+                                <!-- IMAGES SECTION -->
+                                <div class="col-12 mt-3 mb-2">
+                                    <h5 class="text-primary">
+                                        <i class="fas fa-images mr-2"></i> Project Images
+                                    </h5>
+                                    <hr>
+                                </div>
+
+                                <!-- Thumbnail Image -->
+                                <div class="form-group col-md-6">
+                                    <label for="thumbnail_img">
+                                        <i class="fas fa-image mr-1 text-muted"></i> Thumbnail Image
+                                        <small class="text-muted ml-1">(Recommended: 400×300px)</small>
+                                    </label>
+
+                                    @if(!empty($project->thumbnail_img))
+                                        <div id="currentThumbnailWrapper" class="mb-2">
+                                            <p class="text-muted mb-1">
+                                                <i class="fas fa-image mr-1"></i> Current:
+                                            </p>
+                                            <a href="{{ asset('public/upload/projects/'.$project->thumbnail_img) }}" target="_blank" rel="noopener noreferrer">
+                                                <img src="{{ asset('public/upload/projects/'.$project->thumbnail_img) }}"
+                                                     alt="Thumbnail"
+                                                     class="rounded border p-1"
+                                                     style="max-height: 120px; max-width: 100%; object-fit: contain;">
+                                            </a>
+                                        </div>
+                                    @endif
+
+                                    <div class="custom-file">
+                                        <input type="file"
+                                               id="thumbnail_img"
+                                               name="thumbnail_img"
+                                               class="custom-file-input @error('thumbnail_img') is-invalid @enderror"
+                                               accept="image/*">
+                                        <label class="custom-file-label" for="thumbnail_img">Choose image</label>
+                                        @error('thumbnail_img')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
+                                    <div id="thumbnailPreviewWrapper" class="mt-2 d-none">
+                                        <img id="thumbnailPreview" src="#" alt="Preview" class="rounded border p-1" style="max-height: 120px; max-width: 100%; object-fit: contain;">
+                                    </div>
+                                </div>
+
+                                <!-- Background Image -->
+                                <div class="form-group col-md-6">
+                                    <label for="background_img">
+                                        <i class="fas fa-image mr-1 text-muted"></i> Background Image
+                                        <small class="text-muted ml-1">(Recommended: 1280×720px)</small>
+                                    </label>
+
+                                    @if(!empty($project->background_img))
+                                        <div id="currentBackgroundWrapper" class="mb-2">
+                                            <p class="text-muted mb-1">
+                                                <i class="fas fa-image mr-1"></i> Current:
+                                            </p>
+                                            <a href="{{ asset('public/upload/projects/'.$project->background_img) }}" target="_blank" rel="noopener noreferrer">
+                                                <img src="{{ asset('public/upload/projects/'.$project->background_img) }}"
+                                                     alt="Background"
+                                                     class="rounded border p-1"
+                                                     style="max-height: 120px; max-width: 100%; object-fit: contain;">
+                                            </a>
+                                        </div>
+                                    @endif
+
+                                    <div class="custom-file">
+                                        <input type="file"
+                                               id="background_img"
+                                               name="background_img"
+                                               class="custom-file-input @error('background_img') is-invalid @enderror"
+                                               accept="image/*">
+                                        <label class="custom-file-label" for="background_img">Choose image</label>
+                                        @error('background_img')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
+                                    <div id="backgroundPreviewWrapper" class="mt-2 d-none">
+                                        <img id="backgroundPreview" src="#" alt="Preview" class="rounded border p-1" style="max-height: 120px; max-width: 100%; object-fit: contain;">
+                                    </div>
+                                </div>
+
+                                <!-- At A Glance Image -->
+                                <div class="form-group col-md-6">
+                                    <label for="ataglance_img">
+                                        <i class="fas fa-image mr-1 text-muted"></i> At A Glance Image
+                                        <small class="text-muted ml-1">(Recommended: 800×600px)</small>
+                                    </label>
+
+                                    @if(!empty($project->ataglance_img))
+                                        <div id="currentAtaglanceWrapper" class="mb-2">
+                                            <p class="text-muted mb-1">
+                                                <i class="fas fa-image mr-1"></i> Current:
+                                            </p>
+                                            <a href="{{ asset('public/upload/projects/'.$project->ataglance_img) }}" target="_blank" rel="noopener noreferrer">
+                                                <img src="{{ asset('public/upload/projects/'.$project->ataglance_img) }}"
+                                                     alt="At A Glance"
+                                                     class="rounded border p-1"
+                                                     style="max-height: 120px; max-width: 100%; object-fit: contain;">
+                                            </a>
+                                        </div>
+                                    @endif
+
+                                    <div class="custom-file">
+                                        <input type="file"
+                                               id="ataglance_img"
+                                               name="ataglance_img"
+                                               class="custom-file-input @error('ataglance_img') is-invalid @enderror"
+                                               accept="image/*">
+                                        <label class="custom-file-label" for="ataglance_img">Choose image</label>
+                                        @error('ataglance_img')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
+                                    <div id="ataglancePreviewWrapper" class="mt-2 d-none">
+                                        <img id="ataglancePreview" src="#" alt="Preview" class="rounded border p-1" style="max-height: 120px; max-width: 100%; object-fit: contain;">
+                                    </div>
+                                </div>
+
+                                <!-- Features Image -->
+                                <div class="form-group col-md-6">
+                                    <label for="features_img">
+                                        <i class="fas fa-image mr-1 text-muted"></i> Features Image
+                                        <small class="text-muted ml-1">(Recommended: 800×600px)</small>
+                                    </label>
+
+                                    @if(!empty($project->features_img))
+                                        <div id="currentFeaturesWrapper" class="mb-2">
+                                            <p class="text-muted mb-1">
+                                                <i class="fas fa-image mr-1"></i> Current:
+                                            </p>
+                                            <a href="{{ asset('public/upload/projects/'.$project->features_img) }}" target="_blank" rel="noopener noreferrer">
+                                                <img src="{{ asset('public/upload/projects/'.$project->features_img) }}"
+                                                     alt="Features"
+                                                     class="rounded border p-1"
+                                                     style="max-height: 120px; max-width: 100%; object-fit: contain;">
+                                            </a>
+                                        </div>
+                                    @endif
+
+                                    <div class="custom-file">
+                                        <input type="file"
+                                               id="features_img"
+                                               name="features_img"
+                                               class="custom-file-input @error('features_img') is-invalid @enderror"
+                                               accept="image/*">
+                                        <label class="custom-file-label" for="features_img">Choose image</label>
+                                        @error('features_img')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
+                                    <div id="featuresPreviewWrapper" class="mt-2 d-none">
+                                        <img id="featuresPreview" src="#" alt="Preview" class="rounded border p-1" style="max-height: 120px; max-width: 100%; object-fit: contain;">
+                                    </div>
+                                </div>
+
+                                <!-- Book Now Image -->
+                                <div class="form-group col-md-6">
+                                    <label for="booknow_img">
+                                        <i class="fas fa-image mr-1 text-muted"></i> Book Now Image
+                                        <small class="text-muted ml-1">(Recommended: 800×400px)</small>
+                                    </label>
+
+                                    @if(!empty($project->booknow_img))
+                                        <div id="currentBooknowWrapper" class="mb-2">
+                                            <p class="text-muted mb-1">
+                                                <i class="fas fa-image mr-1"></i> Current:
+                                            </p>
+                                            <a href="{{ asset('public/upload/projects/'.$project->booknow_img) }}" target="_blank" rel="noopener noreferrer">
+                                                <img src="{{ asset('public/upload/projects/'.$project->booknow_img) }}"
+                                                     alt="Book Now"
+                                                     class="rounded border p-1"
+                                                     style="max-height: 120px; max-width: 100%; object-fit: contain;">
+                                            </a>
+                                        </div>
+                                    @endif
+
+                                    <div class="custom-file">
+                                        <input type="file"
+                                               id="booknow_img"
+                                               name="booknow_img"
+                                               class="custom-file-input @error('booknow_img') is-invalid @enderror"
+                                               accept="image/*">
+                                        <label class="custom-file-label" for="booknow_img">Choose image</label>
+                                        @error('booknow_img')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
+                                    <div id="booknowPreviewWrapper" class="mt-2 d-none">
+                                        <img id="booknowPreview" src="#" alt="Preview" class="rounded border p-1" style="max-height: 120px; max-width: 100%; object-fit: contain;">
+                                    </div>
+                                </div>
+
+                                <!-- Gallery Images -->
                                 @if($project->images && count($project->images) > 0)
                                 <div class="form-group col-12">
                                     <label>
-                                        <i class="fas fa-images mr-1 text-muted"></i> Current Images
+                                        <i class="fas fa-gallery mr-1 text-muted"></i> Gallery Images
                                         <span class="badge badge-secondary ml-1">{{ count($project->images) }}</span>
                                     </label>
                                     <div class="d-flex flex-wrap mt-1" style="gap:8px;">
                                         @foreach($project->images as $index => $image)
                                             <div class="position-relative">
-                                                <a href="{{ asset('public/upload/'.$image->image) }}" target="_blank" rel="noopener noreferrer">
-                                                    <img src="{{ asset('public/upload/'.$image->image) }}"
-                                                         alt="Project Image {{ $index + 1 }}"
+                                                <a href="{{ asset('public/upload/projects/'.$image->image) }}" target="_blank" rel="noopener noreferrer">
+                                                    <img src="{{ asset('public/upload/projects/'.$image->image) }}"
+                                                         alt="Gallery Image {{ $index + 1 }}"
                                                          class="rounded border p-1"
                                                          style="height:100px; width:100px; object-fit:cover;">
                                                 </a>
@@ -222,15 +428,15 @@
                                         @endforeach
                                     </div>
                                     <small class="text-muted mt-1 d-block">
-                                        <i class="fas fa-info-circle mr-1"></i> Upload new images below to add or replace.
+                                        <i class="fas fa-info-circle mr-1"></i> Upload new gallery images below to add or replace.
                                     </small>
                                 </div>
                                 @endif
 
-                                <!-- New Images Upload -->
+                                <!-- New Gallery Images Upload -->
                                 <div class="form-group col-12">
                                     <label for="images">
-                                        <i class="fas fa-cloud-upload-alt mr-1 text-muted"></i> Upload New Images
+                                        <i class="fas fa-cloud-upload-alt mr-1 text-muted"></i> Upload Gallery Images
                                         <small class="text-muted ml-1">(Recommended: 1280×1280px, multiple allowed)</small>
                                     </label>
                                     <div class="custom-file">
@@ -286,32 +492,70 @@
 <script>
     $(document).ready(function () {
 
-        // Summernote — Details
-        $('#details').summernote({
-            placeholder: 'Enter project details...',
-            tabsize: 2,
-            height: 180,
-            toolbar: [
-                ['style', ['style', 'bold', 'italic', 'underline', 'clear']],
-                ['para',  ['ul', 'ol', 'paragraph']],
-                ['insert',['link', 'hr']],
-                ['view',  ['codeview']]
-            ]
-        });
+    // Summernote — Details
+    $('#details').summernote({
+        placeholder: 'Enter project details...',
+        tabsize: 2,
+        height: 180,
+        toolbar: [
+            ['style', ['style', 'bold', 'italic', 'underline', 'clear']],
+            ['para',  ['ul', 'ol', 'paragraph']],
+            ['insert',['link', 'hr']],
+            ['view',  ['fullscreen', 'codeview']]
+        ]
+    });
 
-        // Summernote — Features
-        $('#feature').summernote({
-            placeholder: 'Enter project features...',
-            tabsize: 2,
-            height: 150,
-            toolbar: [
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['para',  ['ul', 'ol', 'paragraph']],
-                ['view',  ['codeview']]
-            ]
-        });
+    // Summernote — Features
+    $('#feature').summernote({
+        placeholder: 'Enter project features...',
+        tabsize: 2,
+        height: 150,
+        toolbar: [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['para',  ['ul', 'ol', 'paragraph']],
+            ['view',  ['fullscreen', 'codeview']]
+        ]
+    });
 
-        // Multiple image preview
+        // Image preview helper function
+        function setupImagePreview(inputId, previewId, previewWrapperId, currentWrapperId, labelId) {
+            $('#' + inputId).on('change', function () {
+                const file = this.files[0];
+                const label = $(this).next('.custom-file-label');
+                const preview = $('#' + previewId);
+                const wrapper = $('#' + previewWrapperId);
+                const current = $('#' + currentWrapperId);
+
+                if (file) {
+                    label.text(file.name);
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        preview.attr('src', e.target.result);
+                        wrapper.removeClass('d-none');
+                        if (current.length) {
+                            current.css('opacity', '0.4');
+                        }
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    label.text('Choose image');
+                    preview.attr('src', '#');
+                    wrapper.addClass('d-none');
+                    if (current.length) {
+                        current.css('opacity', '1');
+                    }
+                }
+            });
+        }
+
+        // Setup all image previews
+        setupImagePreview('thumbnail_img', 'thumbnailPreview', 'thumbnailPreviewWrapper', 'currentThumbnailWrapper');
+        setupImagePreview('background_img', 'backgroundPreview', 'backgroundPreviewWrapper', 'currentBackgroundWrapper');
+        setupImagePreview('ataglance_img', 'ataglancePreview', 'ataglancePreviewWrapper', 'currentAtaglanceWrapper');
+        setupImagePreview('features_img', 'featuresPreview', 'featuresPreviewWrapper', 'currentFeaturesWrapper');
+        setupImagePreview('booknow_img', 'booknowPreview', 'booknowPreviewWrapper', 'currentBooknowWrapper');
+
+        // Multiple gallery image preview
         $('#images').on('change', function () {
             const files      = this.files;
             const label      = $(this).next('.custom-file-label');

@@ -33,7 +33,7 @@
                         <div class="relative" style="overflow: hidden">
                             <div class="bg-thumb high-contrast">
                                 <div class="bg-thumb-inner"
-                                    style="background-image: url('{{ asset('public/upload/'.$project->image) }}')">
+                                    style="background-image: url('{{ asset('public/upload/projects/'.$project->thumbnail_img) }}')">
                                 </div>
                             </div>
                             <div class="thumb-desc">

@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('projects', function (Blueprint $table) {
@@ -26,15 +21,14 @@ return new class extends Migration
             $table->string('typeName');
             $table->integer('categoryID');
             $table->string('categoryName');
+            $table->string('thumbnail_img', 100);
+            $table->string('background_img', 100);
+            $table->string('ataglance_img', 100);
+            $table->string('features_img', 100);
+            $table->string('booknow_img', 100);
             $table->timestamps();
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('projects');
